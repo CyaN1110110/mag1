@@ -1,0 +1,146 @@
+/* ... 기존 .home-header 부분 수정 ... */
+
+.home-header {
+  background: white;
+  border-bottom: 1px solid #e0e0e0;
+  padding: 20px;
+  display: flex;
+  flex-direction: column; /* 세로 배치로 변경 */
+  gap: 16px;
+  position: sticky; /* 스크롤해도 상단 고정 */
+  top: 0;
+  z-index: 100;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.03);
+}
+
+.header-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+/* src/styles/Home.css */
+
+/* 관리자(톱니바퀴) 아이콘 버튼 */
+.icon-btn {
+  background: #f0f0f0; /* 연한 회색 배경 추가 */
+  border: 1px solid #ddd;
+  font-size: 20px; /* 이모지 크기 */
+  cursor: pointer;
+  padding: 8px;
+  border-radius: 50%; /* 동그라미 모양 */
+  transition: all 0.2s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #333; /* 혹시 텍스트가 있을 경우 진한 색으로 */
+}
+
+.icon-btn:hover {
+  background: #e0e0e0;
+  transform: rotate(90deg); /* 호버시 회전 효과 (재미 요소) */
+}
+
+/* 로그아웃 버튼 */
+.logout-btn {
+  padding: 8px 16px;
+  border: 1px solid #ddd;
+  border-radius: 20px; /* 둥글게 */
+  background: white;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 600;
+  color: #555; /* 진한 회색 텍스트 */
+  transition: all 0.2s ease;
+}
+
+.logout-btn:hover {
+  background: #f5f5f5;
+  color: #d32f2f; /* 호버 시 빨간색으로 경고 느낌 */
+  border-color: #d32f2f;
+}
+
+
+.search-bar {
+  display: flex;
+  align-items: center;
+  background: #f5f5f5;
+  border-radius: 24px;
+  padding: 8px 16px;
+  border: 1px solid transparent;
+  transition: all 0.2s;
+}
+
+.search-bar:focus-within {
+  background: white;
+  border-color: #667eea;
+  box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+}
+
+.search-icon {
+  font-size: 18px;
+  margin-right: 8px;
+  color: #999;
+}
+
+.search-bar input {
+  border: none;
+  background: none;
+  width: 100%;
+  font-size: 16px;
+  outline: none;
+  padding: 4px 0;
+}
+
+.clear-btn {
+  background: none;
+  border: none;
+  color: #999;
+  cursor: pointer;
+  padding: 4px;
+  font-size: 14px;
+}
+
+.active-filter-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  margin-top: 10px;
+  background: #667eea;
+  color: blueviolet;
+  padding: 6px 12px;
+  border-radius: 16px;
+  font-size: 13px;
+  font-weight: 500;
+  animation: fadeIn 0.3s ease;
+}
+
+.active-filter-badge button {
+  background: none;
+  border: none;
+  color: blueviolet;
+  cursor: pointer;
+  font-size: 14px;
+  padding: 0 2px;
+}
+
+/* 태그 스타일 업데이트 */
+.tag {
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.tag:hover {
+  background: #5b22cc;
+  color: #333;
+}
+
+.tag.active {
+  background: #667eea;
+  color: white;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(-5px); }
+  to { opacity: 1; transform: translateY(0); }
+}
